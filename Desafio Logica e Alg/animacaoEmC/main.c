@@ -7,25 +7,23 @@
 
 /*  */
 
-int main() {
+main() {
 	int i, y, x;
-	int aleatorio;
 	
-	imprimeTi (i);
+	imprimeTi ();
 	x = 7;
 	for (i = 0; i < 9; i++) {	
-		imprimeBemVindo (i, x);	
+		imprimeBemVindo (x);	
 		x += 8;
 	}
-
-	//imprime coracao
+	
 	for (i = 14; i > 11; i--){	
 		textcolor(i);
 		imprimeCoracao();
 		textcolor(i);
 		imprimeCoracoes();	
 	}
-	
+
     preencheCoracao (); 
     preencheCoracoes ();
     
