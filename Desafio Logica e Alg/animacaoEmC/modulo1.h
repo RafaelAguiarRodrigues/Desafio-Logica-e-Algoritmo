@@ -1,6 +1,6 @@
 //textos
-void imprimeTi (int i) {
-	int x = 0;
+void imprimeTi () {
+	int i, x = 0;
 	for (i = 1; i < 25; i++) {
 		srand(time(0));
 		int randomico = rand() % 14;
@@ -11,7 +11,8 @@ void imprimeTi (int i) {
 	}
 }
 
-void imprimeBemVindo (int i, int x) {
+void imprimeBemVindo (int x) {
+	int i;
 	for (i = 0; i < 24; i++) {
 		srand(time(0));
 		int randomico = rand() % 14;
@@ -25,7 +26,7 @@ void imprimeBemVindo (int i, int x) {
 //coracao central
 
 void imprimeCoracao () {
-	int i, x, y, z;
+	int i, x, y, final1 = 35, final2 = 45;
 	//topo
 	gotoxy(x = 42, y = 2);
 	printf("###");
@@ -72,9 +73,7 @@ void imprimeCoracao () {
 		sleep(1);
 	}
 	
-	//final
-	int final1 = 35; 
-	int final2 = 45;
+	//final 
 	for (i = 7; i < 13; i++) {
 		gotoxy(x = final1, y = i);
 		printf("#");
@@ -89,108 +88,89 @@ void imprimeCoracao () {
 
 // outros coracoes
 void imprimeTopoCoracoes (int x, int y) {
-		//superiores
-		gotoxy(x = 21, y = 2);
-		printf("###");
-		gotoxy(x = 61, y = 2);
-		printf("###");
-	
-		gotoxy(x = 15, y = 2);
-		printf("###");
-		gotoxy(x = 55, y = 2);
-		printf("###");
-		
-		//inferiores
-		gotoxy(x = 45, y = 12);
-		printf("###");
-		gotoxy(x = 51, y = 12);
-		printf("###");
-		
-		gotoxy(x = 25, y = 12);
-		printf("###");
-		gotoxy(x = 31, y = 12);
-		printf("###");
-		
-		sleep(1);
+		gotoxy(x, y);
+		printf("###");		
 }
 
 void imprimeFileiraUm (int x, int y) {
+	int i;
 	//superior 1
-	gotoxy(x = 20, y = 3); 
+	gotoxy(x = 18, y);
 	printf("#");
-	gotoxy(x = 60, y = 3); 
+	gotoxy(x = 20, y); 
 	printf("#");
 	
-	gotoxy(x = 18, y = 3);
+	gotoxy(x = 58, y);
 	printf("#");
-	gotoxy(x = 58, y = 3);
+	gotoxy(x = 60, y); 
 	printf("#");
 	
 	//superior 2
-	gotoxy(x = 14, y = 3); 
+	gotoxy(x = 14, y); 
 	printf("#");
-	gotoxy(x = 54, y = 3); 
+	gotoxy(24, y);
 	printf("#");
 	
-	gotoxy(24, y = 3);
+	gotoxy(x = 54, y); 
 	printf("#");
-	gotoxy(64, y = 3);
+	gotoxy(64, y);
 	printf("#");
 	
 	//inferior 3
-	gotoxy(x = 44, y = 13);
+	gotoxy(x = 44, y+10);
 	printf("#");
-	gotoxy(x = 54, y = 13);
-	printf("#");
-	
-	gotoxy(x = 50, y = 13);
-	printf("#");
-	gotoxy(x = 48, y = 13);
+	gotoxy(x = 48, y+10);
 	printf("#");
 	
-	//inferior 4
-	gotoxy(x = 24, y = 13);
+	gotoxy(x = 50, y+10);
 	printf("#");
-	gotoxy(x = 34, y = 13);
+	gotoxy(x = 54, y+10);
 	printf("#");
 
-	gotoxy(x = 30, y = 13);
+	//inferior 4
+	gotoxy(x = 24,y+10);
 	printf("#");
-	gotoxy(x = 28, y = 13);
-	printf("#");	
+	gotoxy(x = 28, y+10);
+	printf("#");
+	
+	gotoxy(x = 30, y+10);
+	printf("#");
+	gotoxy(x = 34, y+10);
+	printf("#");
+	
 	sleep(1);
 }
 
 void imprimeFileiraDois (int x, int y) {
 	//superiores
-	gotoxy(x = 19, y = 4); 
+	gotoxy(x = 19, y); 
 	printf("#");
-	gotoxy(x = 59, y = 4); 
-	printf("#");
-	
-	gotoxy(x = 13, y = 4); 
-	printf("#");
-	gotoxy(x = 53, y = 4); 
+	gotoxy(x = 59, y); 
 	printf("#");
 	
-	gotoxy(25, 4);
+	gotoxy(x = 13, y); 
 	printf("#");
-	gotoxy(65, 4);
+	gotoxy(x = 53, y); 
+	printf("#");
+	
+	gotoxy(25, y);
+	printf("#");
+	gotoxy(65, y);
 	printf("#");
 	
 	//inferiores
-	gotoxy(x = 43, y = 14);
+	gotoxy(x = 43, 10+y);
 	printf("#");
-	gotoxy(x = 55, y = 14);
+	gotoxy(x = 55, 10+y);
 	printf("#");
-	gotoxy(x = 49, y = 14);
+	gotoxy(x = 49, 10+y);
 	printf("#");
 	
-	gotoxy(x = 23, y = 14);
+	gotoxy(x = 23, 10+y);
 	printf("#");
-	gotoxy(x = 35, y = 14);
+	gotoxy(x = 35, 10+y);
 	printf("#");
-	gotoxy(x = 29, y = 14);
+	gotoxy(x = 29, 10+y);
 	printf("#");	
 	
 	sleep (1);
@@ -223,39 +203,39 @@ void imprimeFileiraTresQuatro (int i, int x) {
 }
 
 void imprimeFinalCoracoes () {
-	int x,y, i, final1 = 14, final2 = 24, final3 = 54, final4 = 64;
+	int x, i, final1 = 14, final2 = 24, final3 = 54, final4 = 64;
 	int final5 = 44, final6 = 54, final7 = 24, final8 = 34;
 	
 	for (i = 7; i < 13; i++) {
-		gotoxy(final1, y = i);
+		gotoxy(final1, i);
 		printf("#");
 		final1 += 1;
 
-		gotoxy(final2, y = i);
+		gotoxy(final2, i);
 		printf("#");
 		final2 -= 1;
 		
-		gotoxy(final3, y = i);
+		gotoxy(final3, i);
 		printf("#");
 		final3 += 1;
 
-		gotoxy(final4, y = i);
+		gotoxy(final4, i);
 		printf("#");
 		final4 -= 1;
 		
-		gotoxy(final5, y = i+10);
+		gotoxy(final5, i+10);
 		printf("#");
 		final5 += 1;
-		
-		gotoxy(final6, y = i+10);
+
+		gotoxy(final6, i+10);
 		printf("#");
 		final6 -= 1;
 		
-		gotoxy(final7, y = i+10);
+		gotoxy(final7, i+10);
 		printf("#");
 		final7 += 1;
 		
-		gotoxy(final8, y = i+10);
+		gotoxy(final8, i+10);
 		printf("#");
 		final8 -= 1;
 		sleep(1);
@@ -263,15 +243,23 @@ void imprimeFinalCoracoes () {
 }
 
 void imprimeCoracoes () {
-	int i, x, y, z, final1, final2;
+	int i, x, y;
 	//topo
-	imprimeTopoCoracoes (x, y);
+	imprimeTopoCoracoes (x = 15, y = 2);
+	imprimeTopoCoracoes (x = 55, y = 2);
+	imprimeTopoCoracoes (x = 21, y = 2);
+	imprimeTopoCoracoes (x = 61, y = 2);
 	
+	imprimeTopoCoracoes (x = 25, y = 12);
+	imprimeTopoCoracoes (x = 45, y = 12);
+	imprimeTopoCoracoes (x = 31, y = 12);
+	imprimeTopoCoracoes (x = 51, y = 12);
+	sleep(1);
 	//1 fileira
-	imprimeFileiraUm (x, y);
+	imprimeFileiraUm (x, y = 3);
 	
 	//2 fileira
-	imprimeFileiraDois (x, y);
+	imprimeFileiraDois (x, y = 4);
 	
 	//3 e 4 fileira
 	imprimeFileiraTresQuatro (i = 5,x);
@@ -280,7 +268,7 @@ void imprimeCoracoes () {
 	imprimeFinalCoracoes ();
 }
 
-//preenche corações
+//preenche coraÃ§Ãµes
 void preencheCoracao () {
 	textcolor(12);
 	
@@ -439,32 +427,30 @@ void preencheCoracoes () {
 	sleep(1);
 }
 
+void imprimeFuturoProgramar (int x, int y) {
+	gotoxy(x, y);
+	printf("PROGRAMAR E BOM");
+}
+void futuro (x, y) {
+	gotoxy(x, y);
+	printf("FUTURO  ");
+}
 void imprimeFrases () {
-	while (1) {
+		while (1) {
 		srand(time(0));
 		int randomico = rand() % 14;
 		sleep(1);
-		gotoxy(36, 6);
-		printf("PROGRAMAR E BOM");
-		gotoxy(15, 6);
-		printf("PROGRAMAR E BOM");
-		gotoxy(55, 6);
-		printf("PROGRAMAR E BOM");
-		gotoxy(45, 16);
-		printf("PROGRAMAR E BOM");
-		gotoxy(25, 16);
-		printf("PROGRAMAR E BOM");
-		textcolor(randomico+1);
+		imprimeFuturoProgramar(15, 6);
+		imprimeFuturoProgramar(36, 6);
+		imprimeFuturoProgramar(55, 6);
+		imprimeFuturoProgramar(45, 16);
+		imprimeFuturoProgramar(25, 16);
 		sleep(1);
-		gotoxy(36, 6);
-		printf("FUTURO  ");
-		gotoxy(15, 6);
-		printf("FUTURO  ");
-		gotoxy(55, 6);
-		printf("FUTURO  ");
-		gotoxy(45, 16);
-		printf("FUTURO  ");
-		gotoxy(25, 16);
-		printf("FUTURO  ");
+		futuro(15, 6);
+		futuro(36, 6);
+		futuro(55, 6);
+		futuro(45, 16);
+		futuro(25, 16);
+		textcolor(randomico+1);
 	}
 }
