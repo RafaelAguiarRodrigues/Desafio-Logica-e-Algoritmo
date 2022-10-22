@@ -23,16 +23,11 @@ void imprimeBemVindo (int x) {
 	}
 }
 
-//coracao central
-
+//coracao principal
 void imprimeCoracao () {
 	int i, x, y, final1 = 35, final2 = 45;
 	//topo
-	gotoxy(x = 36, y = 2);
-	printf("###");
-	gotoxy(x = 42, y = 2);
-	printf("###");
-	
+	imprimeTopoCoracoes (x = 36, y = 2);
 	Sleep(100);
 	
 	//1 fileira
@@ -43,7 +38,7 @@ void imprimeCoracao () {
 	
 	gotoxy(x = 35, y = 3); 
 	printf("#");
-	gotoxy(45, 3);
+	gotoxy(x = 45, y = 3);
 	printf("#");
 	
 	Sleep(100);
@@ -139,48 +134,35 @@ void imprimeFileiraTresQuatro (int x, int x2) {
 	}
 }
 
-void imprimeFinalCoracoes () {
-	int i, final1 = 14, final2 = 24, final3 = 54, final4 = 64;
-	int final5 = 44, final6 = 54, final7 = 24, final8 = 34;
-	
+void imprimeFinalCoracoes (int x, int x2) {
+	int i;
 	for (i = 7; i < 13; i++) {
-		gotoxy(final1, i);
+		gotoxy(x, i);
 		printf("#");
-		final1 += 1;
+		gotoxy(x+40, i);
+		printf("#");
+		gotoxy(x+30, i+10);
+		printf("#");
+		gotoxy(x+10, i+10);
+		printf("#");
+		x += 1;
 
-		gotoxy(final2, i);
+		gotoxy(x2, i);
 		printf("#");
-		final2 -= 1;
-		
-		gotoxy(final3, i);
+		gotoxy(x2+40, i);
 		printf("#");
-		final3 += 1;
+		gotoxy(x2+30, i+10);
+		printf("#");
+		gotoxy(x2+10, i+10);
+		printf("#");
+		x2 -= 1;
 
-		gotoxy(final4, i);
-		printf("#");
-		final4 -= 1;
-		
-		gotoxy(final5, i+10);
-		printf("#");
-		final5 += 1;
-
-		gotoxy(final6, i+10);
-		printf("#");
-		final6 -= 1;
-		
-		gotoxy(final7, i+10);
-		printf("#");
-		final7 += 1;
-		
-		gotoxy(final8, i+10);
-		printf("#");
-		final8 -= 1;
 		Sleep(100);
 	}
 }
 
 void imprimeCoracoes () {
-	int i, x, x2, y;
+	int i, x, x2, x3, x4, y;
 	//topo
 	imprimeTopoCoracoes (x = 15, y = 2);
 	imprimeTopoCoracoes (x = 55, y = 2);
@@ -204,7 +186,7 @@ void imprimeCoracoes () {
 	Sleep(100);
 	
 	//final
-	imprimeFinalCoracoes ();
+	imprimeFinalCoracoes (x = 14, x2 = 24);
 }
 
 //preenche corações
@@ -346,10 +328,12 @@ void imprimeFuturoProgramar (int x, int y) {
 	gotoxy(x, y);
 	printf("PROGRAMAR E BOM");
 }
+
 void futuro (x, y) {
 	gotoxy(x, y);
 	printf("FUTURO  ");
 }
+
 void imprimeFrases () {
 	while (1) {
 		srand(time(0));
